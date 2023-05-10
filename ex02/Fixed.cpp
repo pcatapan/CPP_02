@@ -57,7 +57,7 @@ void	Fixed::setRawBits(int const raw)
 
 Fixed::~Fixed()
 {
-//	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 ///////////min/max
