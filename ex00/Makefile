@@ -6,30 +6,34 @@
 #    By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 21:39:05 by pcatapan          #+#    #+#              #
-#    Updated: 2023/05/10 21:39:08 by pcatapan         ###   ########.fr        #
+#    Updated: 2023/05/10 21:44:03 by pcatapan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.cpp \
-		  Fixed.cpp
-
-OBJS	=  ${SRCS:.cpp=.o}
-
 NAME	= ex00
-CC		= c++
+
+SRC	= *.cpp
+
+OBJ	=  ${SRCS:.cpp=.o}
+
+CC = g++
+
+FLAGS = -Wall -Werror -Wextra
+
+CPPFLAGS = -std=c++98
+
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all:	${NAME}
 
-${NAME}:	${OBJS}
-	@${CC} ${CFLAGS} -o ${NAME} ${SRCS}
+${NAME}:	${OBJ}
+	@$(CC) $(FLAGS) $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:
-		${RM} ${OBJS}
+	@${RM} ${OBJ}
 
 fclean:	clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re:		fclean all
 
