@@ -1,5 +1,16 @@
-#include <iostream> 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/27 18:53:27 by pcatapan          #+#    #+#             */
+/*   Updated: 2023/05/27 18:53:29 by pcatapan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include <iostream> 
 #include "Fixed.hpp"
 
 void	subject_test()
@@ -46,8 +57,10 @@ void	my_test()
 
 int main( void ) {
 
+	std::cout << "***Subject Test***";
 	subject_test();
-	std::cout << "\n\n\n\n";
+	std::cout << "\n\n";
+	std::cout << "***My Test***";
 	my_test();
 	return 0;
 }
