@@ -6,21 +6,18 @@
 /*   By: pcatapan <pcatapan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 18:53:10 by pcatapan          #+#    #+#             */
-/*   Updated: 2023/05/27 18:53:12 by pcatapan         ###   ########.fr       */
+/*   Updated: 2023/05/28 16:43:35 by pcatapan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> 
 #include <cmath> 
-
 #include "Fixed.hpp"
-
 
 Fixed::Fixed()
 {
 	this->rawBits = 0;
 }
-
 
 Fixed::Fixed(Fixed const &f)
 {
@@ -64,15 +61,12 @@ void	Fixed::setRawBits(int const raw)
 	this->rawBits = raw;
 }
 
-
-
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
 ///////////min/max
-
 Fixed Fixed::min(Fixed& nbr, Fixed& nbr2)
 {
 	return (nbr.toInt() < nbr2.toInt()) ? (nbr) : (nbr2);
@@ -94,7 +88,6 @@ Fixed Fixed::max(const Fixed& nbr, const Fixed& nbr2)
 }
 
 ///operators
-
 std::ostream& operator<<(std::ostream& ostream, Fixed const& f)
 {
 	ostream << f.toFloat();
@@ -108,7 +101,6 @@ void	Fixed::operator=(Fixed const &f)
 }
 
 ////new ones
-
 int Fixed::operator>(const Fixed& nbr)
 {
 	return (this->rawBits > nbr.getRawBits()) ? 1 : 0;
@@ -138,9 +130,8 @@ int Fixed::operator!=(const Fixed& nbr)
 {
 	return (this->rawBits != nbr.getRawBits()) ? 1 : 0;
 }
+
 ///////arithmetic
-
-
 Fixed Fixed::operator+(const Fixed& nbr)
 {
 	Fixed res;
